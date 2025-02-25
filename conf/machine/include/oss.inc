@@ -1,7 +1,7 @@
 # To support layered ipk generation
 # Artifactory URL has to be added here
-#RDK_ARTIFACTS_BASE_URL ?= ""
-#RDK_ARTIFACTS_URL ?= ""
+RDK_ARTIFACTS_BASE_URL ?= ""
+RDK_ARTIFACTS_URL ?= ""
 
 OSS_LAYER_VERSION = "4.4.0"
 def get_oss_machine(d):
