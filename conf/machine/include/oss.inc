@@ -27,7 +27,7 @@ OSS_MACHINE = "${@get_oss_machine(d)}"
 OSS_LAYER_ARCH = "${@get_oss_arch(d)}"
 PACKAGE_EXTRA_ARCHS_append = " ${OSS_LAYER_ARCH}"
 OSS_LAYER_EXTENSION = "${OSS_LAYER_ARCH}"
-OSS_IPK_SERVER_PATH = "${RDK_ARTIFACTS_BASE_URL}/rdk-oss-release/${OSS_LAYER_VERSION}/${OSS_MACHINE}/ipks/debug"
+OSS_IPK_SERVER_PATH = "${RDK_ARTIFACTS_BASE_URL}/opkg/rdk-oss-dev/RDKE-NM-MAN/ipks"
 
 
 # To set the remote feeds
