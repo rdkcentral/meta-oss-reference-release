@@ -30,6 +30,6 @@ OSS_LAYER_EXTENSION = "${OSS_LAYER_ARCH}"
 OSS_IPK_SERVER_PATH = "${RDK_ARTIFACTS_BASE_URL}/rdk-oss-release/${OSS_LAYER_VERSION}/${OSS_MACHINE}/ipks/debug"
 
 # To set the remote feeds
-IPK_FEED_URIS += " \
-                ${OSS_LAYER_EXTENSION}##${OSS_IPK_SERVER_PATH} "
+#IPK_FEED_URIS += " \
+#                ${OSS_LAYER_EXTENSION}##${OSS_IPK_SERVER_PATH} "
 
