@@ -29,7 +29,7 @@ PACKAGE_EXTRA_ARCHS:append = " ${OSS_LAYER_ARCH}"
 OSS_LAYER_EXTENSION = "${OSS_LAYER_ARCH}"
 #OSS_IPK_SERVER_PATH = "${RDK_ARTIFACTS_BASE_URL}/rdk-oss-dev/${OSS_LAYER_VERSION}/${OSS_MACHINE}/ipks"
 #OSS_IPK_SERVER_PATH = "${RDK_ARTIFACTS_BASE_URL}/rdk-oss-dev/RDKEMW-3195/ipks"
-OSS_IPK_SERVER_PATH = "https://partners.artifactory.comcast.com/artifactory/opkg/rdk-oss-dev/RDKEMW-3195/ipks/"
+OSS_IPK_SERVER_PATH = "https://partners.artifactory.comcast.com/artifactory/rdk-oss-dev/RDKEMW-3195/rdk-arm64/ipks/"
 
 # To set the remote feeds
 IPK_FEED_URIS += " \
