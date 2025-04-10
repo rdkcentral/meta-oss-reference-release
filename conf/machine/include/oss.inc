@@ -3,7 +3,7 @@
 RDK_ARTIFACTS_BASE_URL ?= ""
 RDK_ARTIFACTS_URL ?= ""
 
-OSS_LAYER_VERSION = "4.6.0"
+OSS_LAYER_VERSION = "4.5.0"
 def get_oss_machine(d):
     arch = ""
     default_tune = d.getVar('DEFAULTTUNE')
@@ -27,7 +27,7 @@ OSS_MACHINE = "${@get_oss_machine(d)}"
 OSS_LAYER_ARCH = "${@get_oss_arch(d)}"
 PACKAGE_EXTRA_ARCHS:append = " ${OSS_LAYER_ARCH}"
 OSS_LAYER_EXTENSION = "${OSS_LAYER_ARCH}"
-OSS_IPK_SERVER_PATH = "${RDK_ARTIFACTS_BASE_URL}/rdk-oss-release/${OSS_LAYER_VERSION}/${OSS_MACHINE}/ipks"
+OSS_IPK_SERVER_PATH = "https://partners.artifactory.comcast.com/artifactory/rdk-oss-dev/4.5.0-rpi/rdk-arm64/ipks/"
 
 # To set the remote feeds
 #IPK_FEED_URIS += " \
