@@ -7,7 +7,7 @@ RDKE OSS Layer Release Notes
 |---|----|
 |Classification|Public|
 |Document Version|Issue 1|
-|Date|08th April 2025|
+|Date|26th May 2025|
 |Author|RDKE Platform & Tools Team|
 
 | Components | Tag |
