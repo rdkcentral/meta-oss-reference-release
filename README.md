@@ -12,7 +12,7 @@ RDKE OSS Layer Release Notes
 
 | Components | Tag |
 |----------|--------|
-| packagegroup-oss-layer | 4.6.0-r0|
+| packagegroup-oss-layer | 4.6.3-r0|
 
 
 
@@ -36,7 +36,7 @@ Unified OSS Layer - The components of the OSS (Open Source Software) layer, incl
 
 This release will provide a versioned `"meta-oss-reference-release"` that will be used by other stack layes to resolve build and runtime dependencies.
 
-The 4.6.0 OSS release, based on the kirkstone yocto version, delivers architecture-specific and platform-independent artifacts. Within this release, ARM architecture is accommodated with the following variations:
+The 4.6.3 OSS release, based on the kirkstone yocto version, delivers architecture-specific and platform-independent artifacts. Within this release, ARM architecture is accommodated with the following variations:
     1. rdk-arm7a-oss: Default tuning is set to armv7athf-neon.
     2. rdk-arm7ve-oss: Default tuning is set to armv7vethf-neon.
     3. rdk-arm64-oss: 64-bit ARM architecture with a multilib configuration and default tuning set to armv7vethf-neon for compatibility with 32-bit systems.
@@ -48,9 +48,9 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 | Layer | Tag |
 |------|------|
 |meta-rdk-auxiliary|1.2.0|
-|meta-rdk-oss-reference|1.2.0|
+|meta-rdk-oss-reference|4.6.3|
 |meta-openembedded|rdk-4.0.0|
-|poky|rdk-4.2.0|
+|poky|rdk-4.3.0|
 |meta-python2|rdk-4.0.0|
 |meta-rdk-oss-ext|1.2.0|
 |meta-virtualization|rdk-4.0.0|
@@ -114,8 +114,8 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 |52| freetype | (2.11.1-r1) |
 |53| fribidi | (1.0.13-r0) |
 |54| gawk | (3.1.5-r2) |
-|55| gcc-runtime | (11.5.0-r0) |
-|56| gcc-sanitizers | (11.5.0-r0) |
+|55| gcc-runtime | (11.3.0-r0) |
+|56| gcc-sanitizers | (11.3.0-r0) |
 |57| gdbm | (1.8.3-r4) |
 |58| gdk-pixbuf | (2.42.10-r0) |
 |59| gettext | (0.16.1-r6) |
@@ -170,7 +170,7 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 |108| libevent | (2.1.12-r0) |
 |109| libexif | (0.6.24-r0) |
 |110| libffi | (3.4.4-r0) |
-|111| libgcc | (11.5.0-r0) |
+|111| libgcc | (11.3.0-r0) |
 |112| libgcrypt | (1.9.4-r0) |
 |113| libgpg-error | (1.44-r0) |
 |114| libgudev | (237-r0) |
@@ -267,7 +267,7 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 |205| opkg-arch-config | (1.0-r1) |
 |206| opkg-utils | (0.5.0-r1) |
 |207| orc | (0.4.31-r0) |
-|208| packagegroup-oss-layer | (4.6.0-r0) |
+|208| packagegroup-oss-layer | (4.6.3-r0) |
 |209| perl | (5.34.3-r0) |
 |210| pixman | (0.40.0-r0) |
 |211| popt | (1.18-r0) |
