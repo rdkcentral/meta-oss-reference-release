@@ -7,12 +7,12 @@ RDKE OSS Layer Release Notes
 |---|----|
 |Classification|Public|
 |Document Version|Issue 1|
-|Date|26th May 2025|
+|Date|30th May 2025|
 |Author|RDKE Platform & Tools Team|
 
 | Components | Tag |
 |----------|--------|
-| packagegroup-oss-layer | 4.6.3-r0|
+| packagegroup-oss-layer | 4.6.4-r0|
 
 
 
@@ -36,7 +36,7 @@ Unified OSS Layer - The components of the OSS (Open Source Software) layer, incl
 
 This release will provide a versioned `"meta-oss-reference-release"` that will be used by other stack layes to resolve build and runtime dependencies.
 
-The 4.6.3 OSS release, based on the kirkstone yocto version, delivers architecture-specific and platform-independent artifacts. Within this release, ARM architecture is accommodated with the following variations:
+The 4.6.4 OSS release, based on the kirkstone yocto version, delivers architecture-specific and platform-independent artifacts. Within this release, ARM architecture is accommodated with the following variations:
     1. rdk-arm7a-oss: Default tuning is set to armv7athf-neon.
     2. rdk-arm7ve-oss: Default tuning is set to armv7vethf-neon.
     3. rdk-arm64-oss: 64-bit ARM architecture with a multilib configuration and default tuning set to armv7vethf-neon for compatibility with 32-bit systems.
@@ -48,9 +48,9 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 | Layer | Tag |
 |------|------|
 |meta-rdk-auxiliary|1.2.0|
-|meta-rdk-oss-reference|4.6.3|
+|meta-rdk-oss-reference|4.6.4|
 |meta-openembedded|rdk-4.0.0|
-|poky|rdk-4.3.0|
+|poky|rdk-4.3.1|
 |meta-python2|rdk-4.0.0|
 |meta-rdk-oss-ext|1.2.0|
 |meta-virtualization|rdk-4.0.0|
@@ -254,7 +254,7 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 |192| ndisc6 | (1.0.6-r0) |
 |193| ne10 | (1.2.1gitr+0+18c4c982a5-r0) |
 |194| nettle | (2.7.1-r0) |
-|195| networkmanager | (1.43.7-r4) |
+|195| networkmanager | (1.43.7-r5) |
 |196| nghttp2 | (1.48.0-r1) |
 |197| nopoll | (0.3.2.b232-r0) |
 |198| nspr | (4.29-r0) |
@@ -267,7 +267,7 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 |205| opkg-arch-config | (1.0-r1) |
 |206| opkg-utils | (0.5.0-r1) |
 |207| orc | (0.4.31-r0) |
-|208| packagegroup-oss-layer | (4.6.3-r0) |
+|208| packagegroup-oss-layer | (4.6.4-r0) |
 |209| perl | (5.34.3-r0) |
 |210| pixman | (0.40.0-r0) |
 |211| popt | (1.18-r0) |
