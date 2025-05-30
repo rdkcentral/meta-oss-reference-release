@@ -3,7 +3,7 @@
 RDK_ARTIFACTS_BASE_URL ?= ""
 RDK_ARTIFACTS_URL ?= ""
 
-OSS_LAYER_VERSION = "4.6.3"
+OSS_LAYER_VERSION = "4.6.4"
 def get_oss_machine(d):
     arch = ""
     default_tune = d.getVar('DEFAULTTUNE')
