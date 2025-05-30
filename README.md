@@ -50,7 +50,7 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 |meta-rdk-auxiliary|1.2.0|
 |meta-rdk-oss-reference|4.6.4|
 |meta-openembedded|rdk-4.0.0|
-|poky|rdk-4.3.0|
+|poky|rdk-4.3.1|
 |meta-python2|rdk-4.0.0|
 |meta-rdk-oss-ext|1.2.0|
 |meta-virtualization|rdk-4.0.0|
