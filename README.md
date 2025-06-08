@@ -7,12 +7,12 @@ RDKE OSS Layer Release Notes
 |---|----|
 |Classification|Public|
 |Document Version|Issue 1|
-|Date|30th May 2025|
+|Date|07th June 2025|
 |Author|RDKE Platform & Tools Team|
 
 | Components | Tag |
 |----------|--------|
-| packagegroup-oss-layer | 4.6.4-r0|
+| packagegroup-oss-layer | 4.7.0-r0|
 
 
 
@@ -36,7 +36,7 @@ Unified OSS Layer - The components of the OSS (Open Source Software) layer, incl
 
 This release will provide a versioned `"meta-oss-reference-release"` that will be used by other stack layes to resolve build and runtime dependencies.
 
-The 4.6.4 OSS release, based on the kirkstone yocto version, delivers architecture-specific and platform-independent artifacts. Within this release, ARM architecture is accommodated with the following variations:
+The 4.7.0 OSS release, based on the kirkstone yocto version, delivers architecture-specific and platform-independent artifacts. Within this release, ARM architecture is accommodated with the following variations:
     1. rdk-arm7a-oss: Default tuning is set to armv7athf-neon.
     2. rdk-arm7ve-oss: Default tuning is set to armv7vethf-neon.
     3. rdk-arm64-oss: 64-bit ARM architecture with a multilib configuration and default tuning set to armv7vethf-neon for compatibility with 32-bit systems.
@@ -47,12 +47,12 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 ### OSS stack layer
 | Layer | Tag |
 |------|------|
-|meta-rdk-auxiliary|1.2.0|
-|meta-rdk-oss-reference|4.6.4|
+|meta-rdk-auxiliary|1.3.0|
+|meta-rdk-oss-reference|4.7.0|
 |meta-openembedded|rdk-4.0.0|
 |poky|rdk-4.3.1|
 |meta-python2|rdk-4.0.0|
-|meta-rdk-oss-ext|1.2.0|
+|meta-rdk-oss-ext|1.3.0|
 |meta-virtualization|rdk-4.0.0|
 |meta-clang|rdk-4.0.0|
 
@@ -60,7 +60,7 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 
 |#|OSS layer Component|(=version)|
 |-|----------------------|---------|
-|1| abseil-cpp | (20211102.0+git0+7c6608d0db-r0) |
+|1| abseil-cpp | (20211102.0+git0+7c6608d0db-r1) |
 |2| acl | (2.3.1-r0) |
 |3| alsa-lib | (1.2.6.1-r0) |
 |4| alsa-state | (0.2.0-r5) |
@@ -80,7 +80,7 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 |18| bind | (9.18.28-r0) |
 |19| boost | (1.78.0-r0) |
 |20| breakpad | (1.0-r1) |
-|21| breakpad-wrapper | (1.0-r0) |
+|21| breakpad-wrapper | (1.0.0-r0) |
 |22| brotli | (1.0.9-r0) |
 |23| busybox | (1.35.0-r1) |
 |24| bzip2 | (1.0.8-r0) |
@@ -91,7 +91,7 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 |29| coreutils | (6.9-r0) |
 |30| cracklib | (2.9.8-r0) |
 |31| crun | (1.7.2-r0) |
-|32| ctemplate | (1.0.0+git0+4b7e6c52dc-r3) |
+|32| ctemplate | (1.0.0+git0+4b7e6c52dc-r4) |
 |33| cunit | (2.1-3-r0) |
 |34| curl | (7.82.0-r1) |
 |35| db | (5.3.28-r1) |
@@ -130,7 +130,7 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 |68| gobject-introspection | (1.72.0-r0) |
 |69| googletest | (1.11.0+git0+9e71237221-r0) |
 |70| graphite2 | (1.3.6-r0) |
-|71| grpc | (1.46.7-r0) |
+|71| grpc | (1.46.7-r1) |
 |72| gssdp | (1.4.0.1-r0) |
 |73| gupnp | (0.20.10-r1) |
 |74| harfbuzz | (4.0.1-r0) |
@@ -140,7 +140,7 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 |78| initscripts | (1.0-r155) |
 |79| init-system-helpers | (1.62-r0) |
 |80| iperf3 | (3.14-r0) |
-|81| iptables | (1.8.7-r0) |
+|81| iptables | (1.8.7-r1) |
 |82| iso-codes | (4.15.0-r0) |
 |83| iw | (4.7-r0) |
 |84| jansson | (2.13.1-r0) |
@@ -174,7 +174,7 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 |112| libgcrypt | (1.9.4-r0) |
 |113| libgpg-error | (1.44-r0) |
 |114| libgudev | (237-r0) |
-|115| libical | (3.0.16-r0) |
+|115| libical | (3.0.16-r1) |
 |116| libidn2 | (2.3.2-r0) |
 |117| libinput | (1.19.4-r0) |
 |118| libjpeg | (62.3.0-r0) |
@@ -184,13 +184,13 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 |122| libmng | (2.0.3-r0) |
 |123| libndp | (1.8-r0) |
 |124| libnewt | (0.52.23-r0) |
-|125| libnl | (3.5.0-r0) |
+|125| libnl | (3.5.0-r1) |
 |126| libnsl2 | (2.0.0-r0) |
 |127| libnss-mdns | (0.15.1-r1) |
 |128| liboauth | (1.0.3-r0) |
 |129| libogg | (1.3.5-r0) |
 |130| libol | (0.3.18-r0) |
-|131| libomxil | (0.9.3-r0) |
+|131| libomxil | (0.9.3-r1) |
 |132| libopus | (1.3.1-r0) |
 |133| libpam | (1.5.2-r0) |
 |134| libpcap | (1.10.1-r1) |
@@ -208,7 +208,7 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 |146| libsndfile1 | (1.0.31-r0) |
 |147| libsolv | (0.7.22-r0) |
 |148| libsoup-2.4 | (2.74.2-r1) |
-|149| libsoup | (3.4.2-r0) |
+|149| libsoup | (3.6.5-r0) |
 |150| libstd-rs | (1.72.0-r0) |
 |151| libtasn1 | (4.13-r1) |
 |152| libtheora | (1.1.1-r1) |
@@ -230,9 +230,9 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 |168| libxml2 | (2.9.14-r0) |
 |169| libxslt | (1.1.35-r0) |
 |170| libzip | (1.8.0-r0) |
-|171| lighttpd | (1.4.53-r2) |
+|171| lighttpd | (1.4.53-r3) |
 |172| linenoise | (1.0.0+git0+97d2850af1-r1) |
-|173| linux-libc-headers | (4.9-r1) |
+|173| linux-libc-headers | (4.9-r2) |
 |174| log4c | (1.2.3-r0) |
 |175| logrotate | (3.21.0-r1) |
 |176| lsof | (4.94.0-r0) |
@@ -258,7 +258,7 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 |196| nghttp2 | (1.48.0-r1) |
 |197| nopoll | (0.3.2.b232-r0) |
 |198| nspr | (4.29-r0) |
-|199| nss | (3.74-r0) |
+|199| nss | (3.74-r1) |
 |200| openjpeg | (2.4.0-r0) |
 |201| openssh | (8.9p1-r0) |
 |202| openssl-1.1.1l | (1.1.1l-r0) |
@@ -267,7 +267,7 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 |205| opkg-arch-config | (1.0-r1) |
 |206| opkg-utils | (0.5.0-r1) |
 |207| orc | (0.4.31-r0) |
-|208| packagegroup-oss-layer | (4.6.4-r0) |
+|208| packagegroup-oss-layer | (4.7.0-r0) |
 |209| perl | (5.34.3-r0) |
 |210| pixman | (0.40.0-r0) |
 |211| popt | (1.18-r0) |
@@ -301,8 +301,8 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 |239| strace | (5.16-r0) |
 |240| stunnel | (5.65-r2) |
 |241| sysfsutils | (2.1.0-r6) |
-|242| syslog-ng | (3.36.1-r2) |
-|243| systemd | (230+git0+3a74d4fc90-r10) |
+|242| syslog-ng | (3.36.1-r3) |
+|243| systemd | (230+git0+3a74d4fc90-r11) |
 |244| systemd-serialgetty | (1.0.0-r5) |
 |245| taglib | (1.12-r0) |
 |246| tcpdump | (4.99.4-r0) |
@@ -315,7 +315,7 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 |253| udev-extraconf | (1.1-r1) |
 |254| unzip | (6.0-r5) |
 |255| update-rc.d | (0.8-r0) |
-|256| util-linux | (2.37.4-r0) |
+|256| util-linux | (2.37.4-r1) |
 |257| util-linux-libuuid | (2.37.4-r0) |
 |258| util-macros | (1.19.3-r0) |
 |259| vala | (0.56.3-r0) |
@@ -328,11 +328,14 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 |266| woff2 | (1.0.2-r0) |
 |267| wpa-supplicant | (2.10-r7) |
 |268| xkeyboard-config | (2.35.1-r0) |
-|269| xmlsec1 | (1.2.33-r0) |
+|269| xmlsec1 | (1.2.33-r1) |
 |270| xz | (5.2.6-r0) |
 |271| yajl | (2.1.0-r0) |
 |272| zlib | (1.2.11-r0) |
 |273| zstd | (1.5.2-r0) |
 
 ### Diff report of the meta layers contributing to this release of OSS layer project is available at below links
-
+- [ ] meta-oss-common-config [1.1.0-->1.2.0] (https://github.com/rdkcentral/meta-rdk-oss-reference/compare/1.1.0...1.2.0)
+- [ ] meta-rdk-auxiliary [1.2.0-->1.3.0] (https://github.com/rdkcentral/meta-rdk-auxiliary/compare/1.2.0...1.3.0)
+- [ ] meta-rdk-oss-reference [4.6.0-->4.7.0] (https://github.com/rdkcentral/meta-rdk-oss-reference/compare/4.6.0...4.7.0)
+- [ ] poky [4.3.0-->4.3.1] (https://github.com/rdkcentral/poky/compare/4.3.0...4.3.1)
