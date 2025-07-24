@@ -23,13 +23,13 @@ def get_oss_arch(d):
     arch += "-oss"
     return arch
 
-OSS_MACHINE = "${@get_oss_machine(d)}"
-OSS_LAYER_ARCH = "${@get_oss_arch(d)}"
-PACKAGE_EXTRA_ARCHS:append = " ${OSS_LAYER_ARCH}"
-OSS_LAYER_EXTENSION = "${OSS_LAYER_ARCH}"
-OSS_IPK_SERVER_PATH = "${RDK_ARTIFACTS_BASE_URL}/rdk-oss-release/${OSS_LAYER_VERSION}/${OSS_MACHINE}/ipks"
+REL_OSS_MACHINE = "${@get_oss_machine(d)}"
+REL_OSS_LAYER_ARCH = "${@get_oss_arch(d)}"
+PACKAGE_EXTRA_ARCHS:append = " ${REL_OSS_LAYER_ARCH}"
+REL_OSS_LAYER_EXTENSION = "${REL_OSS_LAYER_ARCH}"
+REL_OSS_IPK_SERVER_PATH = "${RDK_ARTIFACTS_BASE_URL}/rdk-oss-release/${OSS_LAYER_VERSION}/${OSS_MACHINE}/ipks"
 
 # To set the remote feeds
 IPK_FEED_URIS += " \
-                ${OSS_LAYER_EXTENSION}##${OSS_IPK_SERVER_PATH} "
+                ${REL_OSS_LAYER_EXTENSION}##${REL_OSS_IPK_SERVER_PATH} "
 
