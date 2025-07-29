@@ -27,7 +27,7 @@ OSS_MACHINE = "${@get_oss_machine(d)}"
 OSS_LAYER_ARCH = "${@get_oss_arch(d)}"
 PACKAGE_EXTRA_ARCHS:append = " ${OSS_LAYER_ARCH}"
 OSS_LAYER_EXTENSION = "${OSS_LAYER_ARCH}"
-OSS_IPK_SERVER_PATH = "https://partners.artifactory.comcast.com/artifactory/rdk-oss-dev/RDKEMW-3772-test3-arm64/rdk-arm64/ipks"
+OSS_IPK_SERVER_PATH = "https://partners.artifactory.comcast.com/artifactory/rdk-oss-dev/RDKEMW-3772-test3/rdk-arm7a/ipks"
 
 # To set the remote feeds
 IPK_FEED_URIS += " \
