@@ -3,7 +3,7 @@
 RDK_ARTIFACTS_BASE_URL ?= ""
 RDK_ARTIFACTS_URL ?= ""
 
-OSS_LAYER_VERSION = "4.7.0"
+OSS_LAYER_VERSION = "4.8.0"
 REL_OSS_MACHINE = "${@get_oss_machine(d)}"
 REL_OSS_LAYER_ARCH = "${@get_oss_arch(d)}"
 PACKAGE_EXTRA_ARCHS:append = "${@ '' if '${REL_OSS_LAYER_ARCH}' == '${OSS_LAYER_ARCH}' else ' ${REL_OSS_LAYER_ARCH}'}"
