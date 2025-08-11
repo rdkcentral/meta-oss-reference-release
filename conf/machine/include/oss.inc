@@ -12,4 +12,4 @@ REL_OSS_IPK_SERVER_PATH = "${RDK_ARTIFACTS_BASE_URL}/rdk-oss-release/${OSS_LAYER
 
 # To set the remote feeds
 IPK_FEED_URIS += " \
-                ${REL_OSS_LAYER_EXTENSION}##${REL_OSS_IPK_SERVER_PATH} "
+                ${REL_OSS_LAYER_EXTENSION}##https://partners.artifactory.comcast.com/artifactory/rdk-oss-dbg/RDK-57964/rdk-arm7a/ipks"
