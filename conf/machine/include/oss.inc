@@ -3,7 +3,7 @@
 RDK_ARTIFACTS_BASE_URL ?= ""
 RDK_ARTIFACTS_URL ?= ""
 
-OSS_LAYER_VERSION = "4.7.1"
+OSS_LAYER_VERSION = "4.7.4-community"
 def get_oss_machine(d):
     arch = ""
     default_tune = d.getVar('DEFAULTTUNE')
@@ -32,4 +32,3 @@ OSS_IPK_SERVER_PATH = "${RDK_ARTIFACTS_BASE_URL}/rdk-oss-release/${OSS_LAYER_VER
 # To set the remote feeds
 IPK_FEED_URIS += " \
                 ${OSS_LAYER_EXTENSION}##${OSS_IPK_SERVER_PATH} "
-
