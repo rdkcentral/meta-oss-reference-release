@@ -47,8 +47,8 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 ### OSS stack layer
 | Layer | Tag |
 |------|------|
-|meta-rdk-auxiliary|1.3.0|
-|meta-rdk-oss-reference|4.7.1|
+|meta-rdk-auxiliary|1.3.1-community|
+|meta-rdk-oss-reference|4.7.4-community|
 |meta-openembedded|rdk-4.0.0|
 |poky|rdk-4.4.0|
 |meta-python2|rdk-4.0.0|
