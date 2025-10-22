@@ -5,7 +5,7 @@ RDK_ARTIFACTS_URL ?= ""
 
 REL_OSS_MACHINE = "${@get_oss_machine(d)}"
 REL_OSS_LAYER_ARCH = "${@get_oss_arch(d)}"
-PACKAGE_EXTRA_ARCHS:append = "${@ '' if '${REL_OSS_LAYER_ARCH}' == '${OSS_LAYER_ARCH}' else ' ${REL_OSS_LAYER_ARCH}'}"
+#PACKAGE_EXTRA_ARCHS:append = "${@ '' if '${REL_OSS_LAYER_ARCH}' == '${OSS_LAYER_ARCH}' else ' ${REL_OSS_LAYER_ARCH}'}"
 REL_OSS_LAYER_EXTENSION = "${REL_OSS_LAYER_ARCH}"
 # REL_OSS_IPK_SERVER_PATH = "${RDK_ARTIFACTS_BASE_URL}/rdk-oss-release/${OSS_LAYER_VERSION}/${REL_OSS_MACHINE}/ipks"
 
