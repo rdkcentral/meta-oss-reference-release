@@ -7,12 +7,12 @@ RDKE OSS Layer Release Notes
 |---|----|
 |Classification|Public|
 |Document Version|Issue 1|
-|Date|28th February 2026|
+|Date|1st March 2026|
 |Author|RDKE Platform & Tools Team|
 
 | Components | Tag |
 |----------|--------|
-| packagegroup-oss-layer | 4.11.0-r0|
+| packagegroup-oss-layer | 4.12.0-r0|
 
 
 
@@ -36,7 +36,7 @@ Unified OSS Layer - The components of the OSS (Open Source Software) layer, incl
 
 This release will provide a versioned `"meta-oss-reference-release"` that will be used by other stack layes to resolve build and runtime dependencies.
 
-The 4.11.0 OSS release, based on the kirkstone yocto version, delivers architecture-specific and platform-independent artifacts. Within this release, ARM architecture is accommodated with the following variations:
+The 4.12.0 OSS release, based on the kirkstone yocto version, delivers architecture-specific and platform-independent artifacts. Within this release, ARM architecture is accommodated with the following variations:
     1. rdk-arm7a-oss: Default tuning is set to armv7athf-neon.
     2. rdk-arm7ve-oss: Default tuning is set to armv7vethf-neon.
     3. rdk-arm64-oss: 64-bit ARM architecture with a multilib configuration and default tuning set to armv7vethf-neon for compatibility with 32-bit systems.
@@ -48,7 +48,7 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 | Layer | Tag |
 |------|------|
 |meta-rdk-auxiliary|1.8.0|
-|meta-rdk-oss-reference|4.11.0|
+|meta-rdk-oss-reference|4.12.0|
 |meta-openembedded|rdk-4.0.0|
 |poky|rdk-4.6.0|
 |meta-python2|rdk-4.0.0|
@@ -155,7 +155,7 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 |93| kmod | (29-r0) |
 |94| lcms | (2.13.1-r0) |
 |95| libaio | (0.3.112-r0) |
-|96| libarchive | (3.6.2-r2) |
+|96| libarchive | (3.6.1-r2) |
 |97| libatomic-ops | (7.6.14-r1) |
 |98| libbsd | (0.11.5-r0) |
 |99| libcap | (2.66-r1) |
@@ -272,7 +272,7 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 |210| opkg-arch-config | (1.0-r1) |
 |211| opkg-utils | (0.5.0-r2) |
 |212| orc | (0.4.31-r0) |
-|213| packagegroup-oss-layer | (4.11.0-r0) |
+|213| packagegroup-oss-layer | (4.12.0-r0) |
 |214| paho-mqtt-c | (1.3.10-r0) |
 |215| perl | (5.34.3-r0) |
 |216| pixman | (0.40.0-r0) |
@@ -343,5 +343,5 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 
 ### Diff report of the meta layers contributing to this release of OSS layer project is available at below links
 - [ ] meta-rdk-auxiliary [1.7.0-->1.8.0] (https://github.com/rdkcentral/meta-rdk-auxiliary/compare/1.7.0...1.8.0)
-- [ ] meta-rdk-oss-reference [4.10.0-->4.11.0] (https://github.com/rdkcentral/meta-rdk-oss-reference/compare/4.10.0...4.11.0)
+- [ ] meta-rdk-oss-reference [4.11.0-->4.12.0] (https://github.com/rdkcentral/meta-rdk-oss-reference/compare/4.11.0...4.12.0)
 - [ ] poky [rdk-4.5.0-->rdk-4.6.0] (https://github.com/rdkcentral/poky/compare/rdk-4.5.0...rdk-4.6.0)
