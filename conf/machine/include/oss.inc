@@ -16,9 +16,9 @@ IPK_FEED_URIS += " \
 def get_cve_checksum (d):
     arch = d.getVar('REL_OSS_LAYER_ARCH') or ''
     mapping = {
-        "rdk-arm7a-oss":  "fe379211bf571831cb3e4becbc884f0338b2f05b2124dfdb91afb129ec8db478",
-        "rdk-arm7ve-oss": "68e724e5231fc0dce52037d3cecf1154415f95d4bac223606ef4d1358254df72",
-        "rdk-arm64-oss":  "0db073343ed9c60e748f0534ddb427a887bdffafacc1077739f1dda86362b583",
+        "rdk-arm7a-oss":  "da0afca627da79da0007059ba410d4e3ba5f01d032f570b36e1ebb69e0691ae6",
+        "rdk-arm7ve-oss": "84145b68fd608fa13e2948c354ed280bb109c64997f8fd251789288f960f32ca",
+        "rdk-arm64-oss":  "725e2ebec60cdcb3c54d2538c388f94f12d663298d6f355bf112d52df8ef31b7",
     }
     return  mapping.get(arch)
 
