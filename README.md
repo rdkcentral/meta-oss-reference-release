@@ -343,7 +343,7 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 |280| zlib | (1.2.11-r1) |
 |281| zstd | (1.5.2-r1) |
 
-### Diff report of the meta layers contributing to this release of OSS layer project is available at below links
+### Diff reports for the updated meta layers contributing to this OSS layer release are available at the links below:
 - [ ] meta-rdk-auxiliary [1.9.0-->1.10.0] (https://github.com/rdkcentral/meta-rdk-auxiliary/compare/1.9.0...1.10.0)
 - [ ] meta-rdk-oss-reference [4.13.0-->4.14.0] (https://github.com/rdkcentral/meta-rdk-oss-reference/compare/4.13.0...4.14.0)
 - [ ] meta-rdk-oss-ext [1.8.0-->1.9.0] (https://github.com/rdk-e/meta-rdk-oss-ext/compare/1.8.0...1.9.0)
