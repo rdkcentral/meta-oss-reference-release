@@ -50,7 +50,6 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 |meta-rdk-auxiliary|1.10.0|
 |meta-rdk-oss-reference|4.14.0|
 |meta-openembedded|rdk-4.0.0|
-|meta-oss-reference-development|rdk-4.3.0|
 |poky|rdk-4.7.0|
 |meta-python2|rdk-4.0.0|
 |meta-rdk-oss-ext|1.9.0|
@@ -347,4 +346,3 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 - [ ] meta-rdk-auxiliary [1.9.0-->1.10.0] (https://github.com/rdkcentral/meta-rdk-auxiliary/compare/1.9.0...1.10.0)
 - [ ] meta-rdk-oss-reference [4.13.0-->4.14.0] (https://github.com/rdkcentral/meta-rdk-oss-reference/compare/4.13.0...4.14.0)
 - [ ] meta-rdk-oss-ext [1.8.0-->1.9.0] (https://github.com/rdk-e/meta-rdk-oss-ext/compare/1.8.0...1.9.0)
-- [ ] meta-oss-reference-development [rdk-4.2.1-->rdk-4.3.0] (https://github.com/rdkcentral/meta-oss-reference-development/compare/rdk-4.2.1...rdk-4.3.0)
