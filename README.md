@@ -7,12 +7,12 @@ RDKE OSS Layer Release Notes
 |---|----|
 |Classification|Public|
 |Document Version|Issue 1|
-|Date|15th May 2026|
+|Date|24th July 2026|
 |Author|RDKE OSS Team|
 
 | Components | Tag |
 |----------|--------|
-| packagegroup-oss-layer | 4.13.0-r0|
+| packagegroup-oss-layer | 4.14.0-r0|
 
 
 
@@ -34,9 +34,9 @@ Major changes in this release are:
 
 Unified OSS Layer - The components of the OSS (Open Source Software) layer, including bb, bbappends, patches, and configs, previously managed within various repositories across RDKE stack layers, have been consolidated into a single repository named meta-rdk-oss-reference. All future modifications to OSS components should be made exclusively within this repository.
 
-This release will provide a versioned `"meta-oss-reference-release"` that will be used by other stack layes to resolve build and runtime dependencies.
+This release will provide a versioned `"meta-oss-reference-release"` that will be used by other stack layers to resolve build and runtime dependencies.
 
-The 4.13.0 OSS release, based on the kirkstone yocto version, delivers architecture-specific and platform-independent artifacts. Within this release, ARM architecture is accommodated with the following variations:
+The 4.14.0 OSS release, based on the kirkstone yocto version, delivers architecture-specific and platform-independent artifacts. Within this release, ARM architecture is accommodated with the following variations:
     1. rdk-arm7a-oss: Default tuning is set to armv7athf-neon.
     2. rdk-arm7ve-oss: Default tuning is set to armv7vethf-neon.
     3. rdk-arm64-oss: 64-bit ARM architecture with a multilib configuration and default tuning set to armv7vethf-neon for compatibility with 32-bit systems.
@@ -47,12 +47,12 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 ### OSS stack layer
 | Layer | Tag |
 |------|------|
-|meta-rdk-auxiliary|1.9.0|
-|meta-rdk-oss-reference|4.13.0|
+|meta-rdk-auxiliary|1.10.0|
+|meta-rdk-oss-reference|4.14.0|
 |meta-openembedded|rdk-4.0.0|
 |poky|rdk-4.7.0|
 |meta-python2|rdk-4.0.0|
-|meta-rdk-oss-ext|1.8.0|
+|meta-rdk-oss-ext|1.9.0|
 |meta-virtualization|rdk-4.0.0|
 |meta-clang|rdk-4.1.0|
 |meta-lts-mixins|rdk-4.0.0|
@@ -79,7 +79,7 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 |17| bash-completion | (2.11-r0) |
 |18| bind | (9.18.28-r0) |
 |19| boost | (1.78.0-r0) |
-|20| breakpad | (1.0-r1) |
+|20| breakpad | (1.0-r2) |
 |21| breakpad-wrapper | (1.0.0-r0) |
 |22| brotli | (1.0.9-r0) |
 |23| busybox | (1.35.0-r3) |
@@ -88,12 +88,12 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 |26| c-ares | (1.18.1-r0) |
 |27| civetweb | (1.10+git+0+0f1b43536d-r0) |
 |28| cjson | (1.7.18-r1) |
-|29| coreutils | (6.9-r0) |
+|29| coreutils | (6.9-r1) |
 |30| cracklib | (2.9.8-r0) |
 |31| crun | (1.7.2-r0) |
 |32| ctemplate | (1.0.0+git0+4b7e6c52dc-r4) |
 |33| cunit | (2.1-3-r0) |
-|34| curl | (7.82.0-r3) |
+|34| curl | (7.82.0-r4) |
 |35| db | (5.3.28-r1) |
 |36| dbus | (1.14.8-r1) |
 |37| dbus-glib | (0.112-r0) |
@@ -123,7 +123,7 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 |61| gettext | (0.16.1-r6) |
 |62| gflags | (2.2.2-r0) |
 |63| glib-2.0 | (2.74.6-r0) |
-|64| glibc | (2.35-r1) |
+|64| glibc | (2.35-r2) |
 |65| glibc-locale | (2.35-r0) |
 |66| glibc-mtrace | (2.35-r0) |
 |67| glib-networking | (2.74.0-r0) |
@@ -260,7 +260,7 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 |198| ndisc6 | (1.0.6-r0) |
 |199| ne10 | (1.2.1gitr+0+18c4c982a5-r0) |
 |200| nettle | (2.7.1-r1) |
-|201| networkmanager | (1.43.7-r12) |
+|201| networkmanager | (1.43.7-r13) |
 |202| nghttp2 | (1.48.0-r1) |
 |203| nopoll | (0.3.2.b232-r0) |
 |204| nspr | (4.29-r0) |
@@ -268,12 +268,12 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 |206| openjpeg | (2.4.0-r0) |
 |207| openssh | (8.9p1-r0) |
 |208| openssl-1.1.1l | (1.1.1l-r0) |
-|209| openssl | (3.0.15-r3) |
+|209| openssl | (3.0.15-r4) |
 |210| opkg | (0.5.0-r4) |
 |211| opkg-arch-config | (1.0-r1) |
 |212| opkg-utils | (0.5.0-r2) |
 |213| orc | (0.4.31-r0) |
-|214| packagegroup-oss-layer | (4.13.0-r0) |
+|214| packagegroup-oss-layer | (4.14.0-r0) |
 |215| paho-mqtt-c | (1.3.10-r0) |
 |216| perl | (5.34.3-r0) |
 |217| pixman | (0.40.0-r0) |
@@ -303,9 +303,9 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 |241| speex | (1.2.0-r0) |
 |242| speexdsp | (1.2.0-r0) |
 |243| sqlite | (2.8.17-r7) |
-|244| sqlite3 | (3.38.5-r1) |
+|244| sqlite3 | (3.38.5-r2) |
 |245| strace | (5.16-r0) |
-|246| stunnel | (5.65-r3) |
+|246| stunnel | (5.65-r4) |
 |247| sysfsutils | (2.1.0-r6) |
 |248| syslog-ng | (3.36.1-r3) |
 |249| systemd | (230+git0+3a74d4fc90-r13) |
@@ -342,7 +342,7 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 |280| zlib | (1.2.11-r1) |
 |281| zstd | (1.5.2-r1) |
 
-### Diff report of the meta layers contributing to this release of OSS layer project is available at below links
-- [ ] meta-rdk-auxiliary [1.8.0-->1.9.0] (https://github.com/rdkcentral/meta-rdk-auxiliary/compare/1.8.0...1.9.0)
-- [ ] meta-rdk-oss-reference [4.12.0-->4.13.0] (https://github.com/rdkcentral/meta-rdk-oss-reference/compare/4.12.0...4.13.0)
-- [ ] poky [rdk-4.6.0-->rdk-4.7.0] (https://github.com/rdkcentral/poky/compare/rdk-4.6.0...rdk-4.7.0)
+### Diff reports for the updated meta layers contributing to this OSS layer release are available at the links below:
+- [ ] meta-rdk-auxiliary [1.9.0-->1.10.0] (https://github.com/rdkcentral/meta-rdk-auxiliary/compare/1.9.0...1.10.0)
+- [ ] meta-rdk-oss-reference [4.13.0-->4.14.0] (https://github.com/rdkcentral/meta-rdk-oss-reference/compare/4.13.0...4.14.0)
+- [ ] meta-rdk-oss-ext [1.8.0-->1.9.0] (https://github.com/rdk-e/meta-rdk-oss-ext/compare/1.8.0...1.9.0)
