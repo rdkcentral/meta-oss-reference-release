@@ -1,0 +1,116 @@
+{
+  "authorized_repositories": [
+    {
+      "full_name": "rdkcentral/poky",
+      "layer": "upstream"
+    },
+    {
+      "full_name": "rdkcentral/meta-openembedded",
+      "layer": "upstream"
+    },
+    {
+      "full_name": "rdkcentral/meta-virtualization",
+      "layer": "upstream"
+    },
+    {
+      "full_name": "rdkcentral/meta-clang",
+      "layer": "upstream"
+    },
+    {
+      "full_name": "rdkcentral/meta-python2",
+      "layer": "upstream"
+    },
+    {
+      "full_name": "rdkcentral/meta-rust",
+      "layer": "upstream"
+    },
+    {
+      "full_name": "rdkcentral/meta-rdk-oss-reference",
+      "layer": "oss"
+    },
+    {
+      "full_name": "rdkcentral/meta-oss-reference-development",
+      "layer": "oss"
+    },
+    {
+      "full_name": "rdkcentral/meta-oss-reference-release",
+      "layer": "oss"
+    },
+    {
+      "full_name": "rdkcentral/meta-rdk-auxiliary",
+      "layer": "oss"
+    },
+    {
+      "full_name": "rdk-e/meta-rdk-oss-ext",
+      "layer": "oss"
+    },
+    {
+      "full_name": "rdk-e/rdke-oss-manifest",
+      "layer": "manifest"
+    },
+    {
+      "full_name": "rdkcentral/rdk-oss-common-manifest",
+      "layer": "manifest"
+    },
+    {
+      "full_name": "rdkcentral/rdke-oss-manifest",
+      "layer": "manifest"
+    },
+    {
+      "full_name": "rdkcentral/meta-oss-common-config",
+      "layer": "oss-config"
+    },
+    {
+      "full_name": "rdk-e/meta-rdk-oss-ext-vendor",
+      "layer": "vendor"
+    },
+    {
+      "full_name": "rdk-e/meta-oss-vendor-realtek",
+      "layer": "vendor"
+    },
+    {
+      "full_name": "rdk-e/meta-oss-vendor-amlogic",
+      "layer": "vendor"
+    },
+    {
+      "full_name": "rdk-e/meta-oss-vendor-broadcom",
+      "layer": "vendor"
+    },
+    {
+      "full_name": "rdk-e/meta-oss-vendor-mtk",
+      "layer": "vendor"
+    },
+    {
+      "full_name": "rdkcentral/meta-rdk-oss-ext-middleware",
+      "layer": "middleware"
+    },
+    {
+      "full_name": "rdk-e/rdke-assembler-manifest",
+      "layer": "assembler-manifest"
+    },
+    {
+      "full_name": "rdk-e/meta-image-assembler",
+      "layer": "assembler"
+    },
+    {
+      "full_name": "rdk-e/meta-cspc-image-assembler",
+      "layer": "assembler"
+    },
+    {
+      "full_name": "rdkcentral/build-scripts",
+      "layer": "build-tools"
+    }
+  ],
+  "audited_extensions": [
+    ".bb",
+    ".bbappend",
+    ".inc",
+    ".conf",
+    ".service",
+    ".sh",
+    ".patch"
+  ],
+  "reporting": {
+    "default_output_dir": "reports/oss-audit"
+  }
+}

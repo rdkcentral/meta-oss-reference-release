@@ -1,0 +1,35 @@
+name: OSS Repository Authorization Guard
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - edited
+
+permissions:
+  contents: read
+
+jobs:
+  verify-authorized-repository:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout pull request content
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Verify PR source repository
+        env:
+          GITHUB_HEAD_REPO_FULL_NAME: >-
+            ${{ github.event.pull_request.head.repo.full_name }}
+        run: |
+          python3 scripts/check_oss_pr_scope.py \
+            --repos-file configs/oss_audit_repos.json

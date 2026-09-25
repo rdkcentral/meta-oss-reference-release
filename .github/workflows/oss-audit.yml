@@ -1,0 +1,65 @@
+name: Monthly OSS Audit
+
+on:
+  schedule:
+    - cron: "0 3 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: oss-audit-report
+  cancel-in-progress: false
+
+jobs:
+  generate-audit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout audit repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Generate OSS audit report
+        env:
+          # This must be a PAT or GitHub App token with read access to every
+          # configured private rdk-e and rdkcentral repository.
+          # The normal GITHUB_TOKEN cannot normally read unrelated private repos.
+          GITHUB_TOKEN: ${{ secrets.OSS_AUDIT_TOKEN }}
+        run: |
+          python3 scripts/oss_audit.py \
+            --repos-file configs/oss_audit_repos.json \
+            --output-dir reports/oss-audit \
+            --continue-on-error
+
+      - name: Upload audit artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: oss-audit-${{ github.run_id }}
+          path: |
+            reports/oss-audit/oss-audit.md
+            reports/oss-audit/oss-audit.json
+          if-no-files-found: error
+          retention-days: 365
+
+      - name: Commit updated audit reports
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add reports/oss-audit/oss-audit.md reports/oss-audit/oss-audit.json
+
+          if git diff --cached --quiet; then
+            echo "No audit report changes to commit."
+            exit 0
+          fi
+
+          git commit -m "Update monthly OSS audit report"
+          git push
