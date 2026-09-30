@@ -32,7 +32,7 @@ DEFAULT_AUDIT_SUFFIXES = {
 }
 
 ASSIGNMENT_RE = re.compile(
-    r"^\s*([A-Za-z0-9_${}.:+-]+)\s*(\+=|=+|\?=|:=)\s*(.*?)\s*$"
+    r"^\s*([A-Za-z0-9_${}.:+-]+)\s*(\+=|=\+|\?=|:=|=)\s*(.*?)\s*$"
 )
 
 INCLUDE_RE = re.compile(

@@ -16,9 +16,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout pull request content
+      - name: Checkout trusted authorization policy
         uses: actions/checkout@v4
         with:
+          ref: ${{ github.event.pull_request.base.sha }}
           fetch-depth: 1
 
       - name: Set up Python

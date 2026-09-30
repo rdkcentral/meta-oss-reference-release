@@ -37,7 +37,6 @@ jobs:
           python3 scripts/oss_audit.py \
             --repos-file configs/oss_audit_repos.json \
             --output-dir reports/oss-audit \
-            --continue-on-error
 
       - name: Upload audit artifacts
         uses: actions/upload-artifact@v4
