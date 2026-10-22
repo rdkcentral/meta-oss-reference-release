@@ -7,12 +7,12 @@ RDKE OSS Layer Release Notes
 |---|----|
 |Classification|Public|
 |Document Version|Issue 1|
-|Date|24th July 2026|
+|Date|22nd October 2026|
 |Author|RDKE OSS Team|
 
 | Components | Tag |
 |----------|--------|
-| packagegroup-oss-layer | 4.14.0-r0|
+| packagegroup-oss-layer | 4.15.0|
 
 
 
@@ -31,27 +31,51 @@ RDKE OSS Layer Release Notes
 
 ## Release Description
 Major changes in this release are:
+Security — OSS Release 4.15.0
 
-Unified OSS Layer - The components of the OSS (Open Source Software) layer, including bb, bbappends, patches, and configs, previously managed within various repositories across RDKE stack layers, have been consolidated into a single repository named meta-rdk-oss-reference. All future modifications to OSS components should be made exclusively within this repository.
+Enabled SAE configuration and patch in wpa-supplicant (OSS Release 4.15.0)
+Removed auth_alg for WPA2/WPA3-PT (OSS Release 4.15.0)
+Moved wpa_supplicant recipes to new dedicated repos: meta-rdk-wireless-connectivity and meta-rdk-vendor-wireless-connectivity (OSS Release 4.15.0)
+Fixed SSID reconnect issue when last-connected SSID password changes (OSS Release 4.15.0)
+Patched multiple CVEs across poky, meta-rdk-auxiliary, and meta-image-assembler (OSS Release 4.15.0)
+Removed unused syslog-ng files; added monotonic timestamp support in syslog-ng (OSS Release 4.15.0)
+New Components — OSS Release 4.15.0
 
-This release will provide a versioned `"meta-oss-reference-release"` that will be used by other stack layers to resolve build and runtime dependencies.
+Added libyaml, libmicrohttpd for OpenTelemetry integration (OSS Release 4.15.0)
+Added webrtc-audio-processing (OSS Release 4.15.0)
+Added Tensorflow to OSS layer, Amlogic only (OSS Release 4.15.0)
+Added libmanette 1.0 recipe with RDK patches (OSS Release 4.15.0)
+Added Linux kernel header patch for HE support (OSS Release 4.15.0)
+Upgraded rdkperf to 1.0.1 (OSS Release 4.15.0)
+Bug Fixes — OSS Release 4.15.0
 
-The 4.14.0 OSS release, based on the kirkstone yocto version, delivers architecture-specific and platform-independent artifacts. Within this release, ARM architecture is accommodated with the following variations:
-    1. rdk-arm7a-oss: Default tuning is set to armv7athf-neon.
-    2. rdk-arm7ve-oss: Default tuning is set to armv7vethf-neon.
-    3. rdk-arm64-oss: 64-bit ARM architecture with a multilib configuration and default tuning set to armv7vethf-neon for compatibility with 32-bit systems.
-The IPK feed is automatically chosen based on the platform's default tuning configuration, with armv7vethf-neon being the default feed.
+Fixed gamepad face button and Amazon Luna controller mappings (OSS Release 4.15.0)
+Fixed qtdemux tfdt parsing issue and memory leak in qtdemux_parse_sbgp (OSS Release 4.15.0)
+Upgraded Breakpad; fixed HTTP/2 "NO_ERROR" request failures (OSS Release 4.15.0)
+Added NULL check in soup_client_message_io_skip (OSS Release 4.15.0)
+Enabled 64-bit file offset support in crun to avoid EROFS errors (OSS Release 4.15.0)
+Enforced single-value format for device.properties (OSS Release 4.15.0)
+Build & Infrastructure — OSS Release 4.15.0
+
+Fixed repositories missing license files, rdk-oss-common-manifest (OSS Release 4.15.0)
+Added recipe version creation support in poky (OSS Release 4.15.0)
+Implemented hash equivalence support across build manifests (OSS Release 4.15.0)
+Fixed SBOM generation and missing license.manifest in layer builds (OSS Release 4.15.0)
+Fixed Canada Daylight Savings handling for Rogers devices (OSS Release 4.15.0)
+Added signedlab build type for signed lab builds (OSS Release 4.15.0)
+
+
 
 
 ## Release layer and components
 ### OSS stack layer
 | Layer | Tag |
 |------|------|
-|meta-rdk-oss-reference|4.14.0|
-|meta-rdk-auxiliary|1.10.0|
+|meta-rdk-oss-reference|4.15.0|
+|meta-rdk-auxiliary|1.12.0|
 |meta-rdk-oss-ext|1.9.0|
 |meta-rdk-bluetooth|1.1.0|
-|poky|rdk-4.7.0|
+|poky|rdk-4.8.0|
 |meta-openembedded|rdk-4.0.0|
 |meta-virtualization|rdk-4.0.0|
 |meta-python2|rdk-4.0.0|
@@ -345,6 +369,6 @@ The IPK feed is automatically chosen based on the platform's default tuning conf
 |281| zstd | (1.5.2-r1) |
 
 ### Diff reports for the updated meta layers contributing to this OSS layer release are available at the links below:
-- [ ] meta-rdk-auxiliary [1.9.0-->1.10.0] (https://github.com/rdkcentral/meta-rdk-auxiliary/compare/1.9.0...1.10.0)
-- [ ] meta-rdk-oss-reference [4.13.0-->4.14.0] (https://github.com/rdkcentral/meta-rdk-oss-reference/compare/4.13.0...4.14.0)
+- [ ] meta-rdk-auxiliary [1.10.0-->1.12.0] (https://github.com/rdkcentral/meta-rdk-auxiliary/compare/1.10.0...1.12.0)
+- [ ] meta-rdk-oss-reference [4.14.0-->4.15.0] https://github.com/rdkcentral/meta-rdk-oss-reference/compare/4.14.0...4.15.0-PreRelease
 - [ ] meta-rdk-oss-ext [1.8.0-->1.9.0] (https://github.com/rdk-e/meta-rdk-oss-ext/compare/1.8.0...1.9.0)
