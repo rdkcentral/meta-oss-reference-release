@@ -7,7 +7,7 @@ RDKE OSS Layer Release Notes
 |---|----|
 |Classification|Public|
 |Document Version|Issue 1|
-|Date|22nd October 2026|
+|Date|23rd October 2026|
 |Author|RDKE OSS Team|
 
 | Components | Tag |
@@ -72,10 +72,10 @@ Added signedlab build type for signed lab builds (OSS Release 4.15.0)
 | Layer | Tag |
 |------|------|
 |meta-rdk-oss-reference|4.15.0|
-|meta-rdk-auxiliary|1.12.0|
+|meta-rdk-auxiliary|1.13.0|
 |meta-rdk-oss-ext|1.9.0|
 |meta-rdk-bluetooth|1.1.0|
-|poky|rdk-4.8.0|
+|poky|rdk-4.9.0|
 |meta-openembedded|rdk-4.0.0|
 |meta-virtualization|rdk-4.0.0|
 |meta-python2|rdk-4.0.0|
