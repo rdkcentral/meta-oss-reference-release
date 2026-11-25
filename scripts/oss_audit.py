@@ -960,7 +960,7 @@ def write_minimal_markdown_report(
     lines.extend(
         [
             "",
-            "> For detailed audit table, see [OSS Audit Report](https://github.com/rdkcentral/docs/tree/main/docs/OSS_Audit_Report)",
+            "> For detailed audit table, see [OSS Audit Report](https://github.com/rdkcentral/docs/tree/main/docs/OSSAuditReport)",
             "",
         ]
     )
@@ -1400,19 +1400,19 @@ def main() -> None:
         failures,
     )
 
-    if args.detailed_output_dir:
-        args.detailed_output_dir.mkdir(parents=True, exist_ok=True)
-        
-        date_str = datetime.fromisoformat(generated_at.replace('Z', '+00:00')).strftime('%Y-%m-%d')
-        detailed_report_name = f"oss_audit_report_{date_str}.md"
-        
-        write_detailed_markdown_report(
-            args.detailed_output_dir / detailed_report_name,
-            generated_at,
-            repositories,
-            audit_rows,
-            failures,
-        )
+    detailed_output_dir = args.detailed_output_dir or output_dir
+    detailed_output_dir.mkdir(parents=True, exist_ok=True)
+    
+    date_str = datetime.fromisoformat(generated_at.replace('Z', '+00:00')).strftime('%Y-%m-%d')
+    detailed_report_name = f"oss_audit_report_{date_str}.md"
+    
+    write_detailed_markdown_report(
+        detailed_output_dir / detailed_report_name,
+        generated_at,
+        repositories,
+        audit_rows,
+        failures,
+    )
 
     if not args.keep_clones:
         shutil.rmtree(
