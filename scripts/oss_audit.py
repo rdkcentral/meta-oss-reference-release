@@ -831,6 +831,192 @@ def html_audit_table(rows: List[dict]) -> str:
     return "\n".join(lines)
 
 
+def write_minimal_markdown_report(
+    path: Path,
+    generated_at: str,
+    repositories: List[dict],
+    audit_rows: List[dict],
+    per_repo_counts: List[dict],
+    failures: List[dict],
+) -> None:
+    """Generate minimal report with only summary sections."""
+    layer_counts = Counter(
+        row["layer"]
+        for row in audit_rows
+    )
+
+    type_counts = Counter(
+        row["file_type"]
+        for row in audit_rows
+    )
+
+    total_recipe_count = sum(
+        1
+        for row in audit_rows
+        if row["file_type"] in {"bb", "bbappend"}
+    )
+
+    patch_count = sum(
+        1
+        for row in audit_rows
+        if row["Patch"]
+    )
+
+    lines = [
+        "# OSS Component Audit Report",
+        "",
+        "- Generated: `{0}`".format(generated_at),
+        "- Configured repositories: `{0}`".format(
+            len(repositories)
+        ),
+        "- Failed repositories: `{0}`".format(
+            len(failures)
+        ),
+        "- Total audited files: `{0}`".format(
+            len(audit_rows)
+        ),
+        "- Recipe and append files: `{0}`".format(
+            total_recipe_count
+        ),
+        "- Files containing patch entries: `{0}`".format(
+            patch_count
+        ),
+        "",
+        "## Files per repository",
+        "",
+        "| Repository | Layer | Recipes | Files |",
+        "| --- | --- | ---: | ---: |",
+    ]
+
+    for entry in per_repo_counts:
+        lines.append(
+            "| {0} | {1} | {2} | {3} |".format(
+                entry["repository"],
+                entry["layer"],
+                entry["recipes"],
+                entry["files"],
+            )
+        )
+
+    lines.extend(
+        [
+            "",
+            "## Files by layer",
+            "",
+            "| Layer | Files |",
+            "| --- | ---: |",
+        ]
+    )
+
+    for layer, count in sorted(layer_counts.items()):
+        lines.append(
+            "| {0} | {1} |".format(
+                layer,
+                count,
+            )
+        )
+
+    lines.extend(
+        [
+            "",
+            "## Files by type",
+            "",
+            "| File type | Files |",
+            "| --- | ---: |",
+        ]
+    )
+
+    for file_type, count in sorted(type_counts.items()):
+        lines.append(
+            "| {0} | {1} |".format(
+                file_type,
+                count,
+            )
+        )
+
+    if failures:
+        lines.extend(
+            [
+                "",
+                "## Repository scan failures",
+                "",
+                "| Repository | Error |",
+                "| --- | --- |",
+            ]
+        )
+
+        for failure in failures:
+            error = failure["error"]
+            error = error.replace("|", "\\|")
+            error = error.replace("\n", " ")
+
+            lines.append(
+                "| {0} | {1} |".format(
+                    failure["repository"],
+                    error,
+                )
+            )
+
+    lines.extend(
+        [
+            "",
+            "> For detailed audit table, see [OSS Audit Report](https://github.com/rdkcentral/docs/tree/main/docs/OSSAuditReport)",
+            "",
+        ]
+    )
+
+    path.write_text(
+        "\n".join(lines),
+        encoding="utf-8",
+    )
+
+
+def write_detailed_markdown_report(
+    path: Path,
+    generated_at: str,
+    repositories: List[dict],
+    audit_rows: List[dict],
+    failures: List[dict],
+) -> None:
+    """Generate detailed report with audit table."""
+    lines = [
+        "# OSS Component Audit Report - Detailed Audit Table",
+        "",
+        "- Generated: `{0}`".format(generated_at),
+        "- Configured repositories: `{0}`".format(
+            len(repositories)
+        ),
+        "- Failed repositories: `{0}`".format(
+            len(failures)
+        ),
+        "- Total audited files: `{0}`".format(
+            len(audit_rows)
+        ),
+        "",
+        "## Audit table",
+        "",
+        html_audit_table(audit_rows),
+        "",
+        "## Audit columns",
+        "",
+        "- `Repository`: repository containing the file.",
+        "- `Layer`: configured repository layer.",
+        "- `Recipe`: recipe name for `.bb` and `.bbappend` files.",
+        "- `Path`: repository-relative file path.",
+        "- `File type`: file extension without the leading dot.",
+        "- `SRC_URI`: direct and included SRC_URI values.",
+        "- `LICENSE`: license from the recipe or resolved include.",
+        "- `Patch`: patch entries extracted from SRC_URI.",
+        "- `Include`: include/require statements and resolved paths.",
+        "",
+    ]
+
+    path.write_text(
+        "\n".join(lines),
+        encoding="utf-8",
+    )
+
+
 def write_markdown_report(
     path: Path,
     generated_at: str,
@@ -1007,9 +1193,9 @@ def main() -> None:
     )
 
     parser.add_argument(
-        "--work-dir",
+        "--detailed-output-dir",
         type=Path,
-        help="Directory used for temporary repository clones.",
+        help="Directory for detailed audit report (outside repo, e.g., docs repo).",
     )
 
     parser.add_argument(
@@ -1031,6 +1217,12 @@ def main() -> None:
         "--keep-clones",
         action="store_true",
         help="Keep cloned repositories for troubleshooting.",
+    )
+
+    parser.add_argument(
+        "--work-dir",
+        type=Path,
+        help="Working directory for cloning repositories (default: .audit-clones in output-dir).",
     )
 
     args = parser.parse_args()
@@ -1155,12 +1347,40 @@ def main() -> None:
 
     generated_at = utc_now()
 
+    layer_counts = Counter(
+        row["layer"]
+        for row in audit_rows
+    )
+
+    type_counts = Counter(
+        row["file_type"]
+        for row in audit_rows
+    )
+
+    total_recipe_count = sum(
+        1
+        for row in audit_rows
+        if row["file_type"] in {"bb", "bbappend"}
+    )
+
+    patch_count = sum(
+        1
+        for row in audit_rows
+        if row["Patch"]
+    )
+
     report = {
         "generated_at": generated_at,
+        "configured_repositories": len(repositories),
+        "failed_repositories": len(failures),
+        "total_audited_files": len(audit_rows),
+        "recipe_and_append_files": total_recipe_count,
+        "files_containing_patches": patch_count,
         "repositories": repositories,
-        "failures": failures,
         "per_repository_counts": per_repo_counts,
-        "audit": audit_rows,
+        "files_by_layer": dict(sorted(layer_counts.items())),
+        "files_by_type": dict(sorted(type_counts.items())),
+        "failures": failures,
     }
 
     (output_dir / "oss-audit.json").write_text(
@@ -1171,12 +1391,26 @@ def main() -> None:
         encoding="utf-8",
     )
 
-    write_markdown_report(
+    write_minimal_markdown_report(
         output_dir / "oss-audit.md",
         generated_at,
         repositories,
         audit_rows,
         per_repo_counts,
+        failures,
+    )
+
+    detailed_output_dir = args.detailed_output_dir or output_dir
+    detailed_output_dir.mkdir(parents=True, exist_ok=True)
+    
+    date_str = datetime.fromisoformat(generated_at.replace('Z', '+00:00')).strftime('%Y-%m-%d')
+    detailed_report_name = f"oss_audit_report_{date_str}.md"
+    
+    write_detailed_markdown_report(
+        detailed_output_dir / detailed_report_name,
+        generated_at,
+        repositories,
+        audit_rows,
         failures,
     )
 
